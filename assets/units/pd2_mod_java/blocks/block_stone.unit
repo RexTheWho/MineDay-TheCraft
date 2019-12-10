@@ -1,0 +1,12 @@
+<unit type="jva" slot="1">
+	<object file="units/pd2_mod_java/blocks/objects/block_solid" />
+	<!-- <network sync="spawn"/> -->
+	<extensions>
+		<extension name="unit_data"			class="ScriptUnitData" />
+		<extension name="damage"			class="UnitDamage" />
+		<extension name="sync_unit_data"	class="SyncUnitData" />
+		<extension name="cube_unit"			class="CubeUnit" >
+			<var name="_block_id"			value="stone" />
+		</extension>
+	</extensions>
+</unit>

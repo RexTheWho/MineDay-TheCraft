@@ -1,0 +1,92 @@
+<table>
+	<unit>
+		<variables>
+			<var_damage value="0"/>
+		</variables>
+		
+		<filter name="'broken'">
+			<check value="vars.var_damage == 10"/>
+		</filter>
+		
+		<body name="'body_static'">
+			<endurance bullet="1" melee="1">
+				<run_sequence name=" 'hit_block' "/>
+			</endurance>
+			<endurance explosion="1">
+				<run_sequence name=" 'hit_block_explosive' "/>
+			</endurance>
+		</body>
+		<body name="'body_dynamic'">
+			<endurance collision="1">
+				<run_sequence name=" 'make_static' "/>
+			</endurance>
+		</body>
+		
+		<sequence name="'hit_block_explosive'" editable_state="true" triggable="true">
+			<set_variables var_damage="9"/>
+			<run_sequence name="'hit_block'" />
+		</sequence>
+		<sequence name="'hit_block'" editable_state="true" triggable="true">
+			<function extension="'cube_unit'" function="'update_block'"/>
+			<function extension="'cube_unit'" function="'damage_block'"/>
+			<set_damage melee="0" />
+			<set_damage bullet="0" />
+		</sequence>
+		<sequence name="'crack_block'" editable_state="true" triggable="true">
+			<object name="'g_damage_' .. vars.var_damage" enabled="false"/>
+			<set_variables var_damage="vars.var_damage + 1"/>
+			<object name="'g_damage_' .. vars.var_damage" enabled="true"/>
+			<set_damage melee="0" />
+			<set_damage bullet="0" />
+			<run_sequence name="'break_block'" filter="'broken'" />
+		</sequence>
+		<sequence name="'uncrack_block'" editable_state="true" triggable="true">
+			<object name="'g_damage_' .. vars.var_damage" enabled="false"/>
+			<set_variables var_damage="vars.var_damage - 1"/>
+			<object name="'g_damage_' .. vars.var_damage" enabled="true"/>
+			<set_damage melee="0" />
+			<set_damage bullet="0" />
+		</sequence>
+		
+		<sequence name="'break_block'" editable_state="true" triggable="true">
+			<body name="'body_static'"	enabled="false"/>
+			<body name="'body_dynamic'"	enabled="false"/>
+			<function extension="'cube_unit'" function="'broke_block'"/>
+			<slot slot="0"/>
+		</sequence>
+		<sequence name="'explode_block'" editable_state="true" triggable="true">
+			<run_sequence name="'make_dynamic'" />
+			<object name="'g_fullwhite'" enabled="true"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="0.5"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="1"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="1.5"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="2.0"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="2.5"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="3.0"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="3.5"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="4.0"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="4.1"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="4.2"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="4.3"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="4.4"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="4.5"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="4.6"/>
+			<object name="'g_fullwhite'" enabled="false"	start_time="4.7"/>
+			<object name="'g_fullwhite'" enabled="true"		start_time="4.8"/>
+			<function extension="'explode_unit'" function="'detonate'" param1="object_pos( 'a_block_centre' )" param2="400" param3="250" param4="5" start_time="5"/>
+			<slot slot="0" start_time="5"/>
+		</sequence>
+		
+		<sequence name="'make_dynamic'" editable_state="true" triggable="true">
+			<object name="'g_damage_' .. vars.var_damage" enabled="false"/>
+			<body name="'body_static'"	enabled="false"/>
+			<body name="'body_dynamic'"	enabled="true"/>
+		</sequence>
+		<sequence name="'make_static'" editable_state="true" triggable="true">
+			<function extension="'cube_unit'" function="'clean_pos_rot'" param1="object_pos('rp_rootpoint')"/>
+			<body name="'body_static'"	enabled="true"/>
+			<body name="'body_dynamic'"	enabled="false"/>
+			<set_damage collision="0" />
+		</sequence>
+	</unit>
+</table>

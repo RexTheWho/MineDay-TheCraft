@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<unit type="jva" slot="1">
+	<object file="units/pd2_mod_java/dev/test_chunk_loader_v2/test_chunk_loader_v2" />
+    <!-- <network sync="spawn" /> -->
+    <extensions>
+        <extension	name="unit_data"	class="ScriptUnitData" />
+		<extension	name="damage"		class="UnitDamage" />
+		<extension	name="block_chunk"	class="WorldChunkGen" />
+    </extensions>
+</unit>

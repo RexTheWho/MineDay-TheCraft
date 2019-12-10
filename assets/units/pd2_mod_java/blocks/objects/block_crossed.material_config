@@ -1,0 +1,10 @@
+<materials version="3">
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+	
+	<material name="mtl_crossed" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GSMA_TEXTURE:NORMALMAP" unique="true" version="2">
+		<diffuse_texture		file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture		file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+		<bump_normal_texture	file="units/pd2_mod_java/blocks/textures/nm_flat" />
+        <variable				name="alpha_ref" type="scalar" value="0.5" />
+	</material>
+</materials>

@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_java/blocks/objects/block_grow" orientation_object="rp_rootpoint" />
+	<sequence_manager file="units/pd2_mod_java/blocks/objects/block_grow" />
+	
+	<bodies>
+		<body name="body_static" enabled="true" template="raycoll">
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	
+	<graphics>
+		<graphic_group name="grp_faces" enabled="true" culling_object="co_culling">
+			<object name="g_g"	enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+	
+</dynamic_object>

@@ -1,0 +1,43 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_java/blocks/objects/block_solid" orientation_object="rp_rootpoint" />
+	<sequence_manager file="units/pd2_mod_java/blocks/objects/block_solid" />
+	
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_dynamic" enabled="false" template="dynamic_not_pushable">
+			<object name="rp_rootpoint" />
+			<object name="c_c" collision_type="box" padding="-2.6" mass="1000" />
+		</body>
+	</bodies>
+
+	<!--
+	<decal_surfaces default_material="no_decal">
+		<decal_mesh name="c_c" enabled="true" material="no_decal" />
+	</decal_surfaces>
+	-->
+	
+	<graphics>
+		<graphic_group name="grp_faces" enabled="true" culling_object="co_culling">
+			<object name="g_x_neg"		enabled="true" />
+			<object name="g_x_pos"		enabled="true" />
+			<object name="g_y_neg"		enabled="true" />
+			<object name="g_y_pos"		enabled="true" />
+			<object name="g_z_neg"		enabled="true" />
+			<object name="g_z_pos"		enabled="true" />
+			<object name="c_c"			enabled="true" shadow_caster="true"/>
+			<object name="g_fullwhite"	enabled="false" />
+			<object name="g_damage_1"	enabled="false" />
+			<object name="g_damage_2"	enabled="false" />
+			<object name="g_damage_3"	enabled="false" />
+			<object name="g_damage_4"	enabled="false" />
+			<object name="g_damage_5"	enabled="false" />
+			<object name="g_damage_6"	enabled="false" />
+			<object name="g_damage_7"	enabled="false" />
+			<object name="g_damage_8"	enabled="false" />
+			<object name="g_damage_9"	enabled="false" />
+		</graphic_group>
+	</graphics>
+	
+</dynamic_object>

@@ -1,0 +1,12 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_java/dev/test_chunk_loader_v2/test_chunk_loader_v2" name_id="test_chunk_loader_v2_001" position="0 0 1600" rotation="0 0 0 -1" unit_id="100000"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

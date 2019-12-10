@@ -1,0 +1,14 @@
+<table>
+	<unit>
+		<body name="'body_static'">
+			<endurance damage="1" melee="1">
+				<run_sequence name=" 'break_block' "/>
+			</endurance>
+		</body>
+		<sequence name="'break_block'" editable_state="true" triggable="true">
+			<body name="'body_static'"	enabled="false"/>
+			<function extension="'cube_unit'" function="'broke_block'"/>
+			<slot slot="0"/>
+		</sequence>
+	</unit>
+</table>

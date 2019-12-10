@@ -1,0 +1,124 @@
+<table type="table">
+	<unit>
+		<variables>
+			<v_amount		value="0"/>
+			<v_x			value="0"/>
+			<v_y			value="0"/>
+			<v_z			value="0"/>
+			<v_xyz			value="0"/>
+			<v_chunk		value="16"/>
+			<v_chunkCubed	value="0"/>
+			<v_chunkWS		value="0"/>
+		</variables>
+		
+		<filter name="'filter_not_done'">
+			<check value="vars.v_amount < vars.v_chunkCubed"/>
+		</filter>
+		<filter name="'filter_is_done'">
+			<check value="vars.v_amount == vars.v_chunkCubed"/>
+		</filter>
+		
+		
+		<filter name="'filter_rowX_limit'">
+			<check value="vars.v_x == vars.v_chunkWS"/>
+		</filter>
+		<filter name="'filter_rowX_cont'">
+			<check value="vars.v_x < vars.v_chunkWS "/>
+		</filter>
+		<filter name="'filter_rowY_limit'">
+			<check value="vars.v_y == vars.v_chunkWS"/>
+		</filter>
+		<filter name="'filter_rowY_cont'">
+			<check value="vars.v_y < vars.v_chunkWS"/>
+		</filter>
+		
+		<filter name="'filter_rowZ_bedrock'">
+			<check value="vars.v_z == 0"/>
+		</filter>
+		<filter name="'filter_rowZ_low'">
+			<check value="vars.v_z > 0"/>
+			<check value="vars.v_z < vars.v_chunkWS / 4"/>
+		</filter>
+		<filter name="'filter_rowZ_medium'">
+			<check value="vars.v_z >= vars.v_chunkWS / 4"/>
+			<check value="vars.v_z < vars.v_chunkWS / 1.6"/>
+		</filter>
+		<filter name="'filter_rowZ_high'">
+			<check value="vars.v_z >= vars.v_chunkWS / 1.6"/>
+			<check value="vars.v_z < vars.v_chunkWS - 100"/>
+		</filter>
+		<filter name="'filter_rowZ_grass'">
+			<check value="vars.v_z >= vars.v_chunkWS - 100"/>
+		</filter>
+		
+		<sequence editable_state="true" name="'chunksize_8'" triggable="true">
+			<set_variables	v_chunk="8"/>
+		</sequence>
+		<sequence editable_state="true" name="'chunksize_16'" triggable="true">
+			<set_variables	v_chunk="16"/>
+		</sequence>
+		<sequence editable_state="true" name="'chunksize_32'" triggable="true">
+			<set_variables	v_chunk="32"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'startup'" startup="false" triggable="true">
+			<run_sequence name="'startup_wait'" start_time="0.01"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'startup_wait'" triggable="true">
+			<set_variables	v_chunkCubed="vars.v_chunk * vars.v_chunk * vars.v_chunk"/>
+			<set_variables	v_chunkWS="vars.v_chunk * 100"/>
+			<run_sequence name="'spawn_unit'" />
+		</sequence>
+		
+		<sequence editable_state="true" name="'spawn_unit'" triggable="true">
+			<set_variables	v_xyz="v(vars.v_x, vars.v_y, vars.v_z)"/>
+			
+			<!--Ahh yes, Jank.-->
+			<spawn_unit filter="'filter_rowZ_bedrock'"
+				name=			"'units/pd2_mod_java/blocks/block_bedrock'"
+				rotation=		"object_rot('rp_root')"
+				position=		"object_pos('rp_root') + vars.v_xyz"
+			/>
+			<spawn_unit filter="'filter_rowZ_low'"
+				name=			"'units/pd2_mod_java/blocks/block_'..pick('bedrock','stone','stone','stone','stone','stone','stone')"
+				rotation=		"object_rot('rp_root')"
+				position=		"object_pos('rp_root') + vars.v_xyz"
+			/>
+			<spawn_unit filter="'filter_rowZ_medium'"
+				name=			"'units/pd2_mod_java/blocks/block_'..pick('stone','stone','stone','stone','stone','stone','stone','stone','stone','stone','dirt','dirt','dirt','dirt')"
+				rotation=		"object_rot('rp_root')"
+				position=		"object_pos('rp_root') + vars.v_xyz"
+			/>
+			<spawn_unit filter="'filter_rowZ_high'"
+				name=			"'units/pd2_mod_java/blocks/block_'..pick('stone','dirt','dirt','dirt','dirt','dirt','dirt','dirt','dirt','dirt','dirt','dirt','dirt')"
+				rotation=		"object_rot('rp_root')"
+				position=		"object_pos('rp_root') + vars.v_xyz"
+			/>
+			<spawn_unit filter="'filter_rowZ_grass'"
+				name=			"'units/pd2_mod_java/blocks/block_grass'"
+				rotation=		"object_rot('rp_root')"
+				position=		"object_pos('rp_root') + vars.v_xyz"
+			/>
+			
+			
+			<run_sequence name="'update_vals'" start_time="0.001" />
+		</sequence>
+		<sequence editable_state="true" name="'update_vals'" startup="false" triggable="true">
+			<set_variables	v_amount="vars.v_amount + 1"/>
+			
+			<set_variables filter="'filter_rowX_cont'"		v_x="vars.v_x + 100"/>
+			<set_variables filter="'filter_rowX_limit'"		v_y="vars.v_y + 100"/>
+			<set_variables filter="'filter_rowX_limit'"		v_x="0"/>
+			<set_variables filter="'filter_rowY_limit'"		v_z="vars.v_z + 100"/>
+			<set_variables filter="'filter_rowY_limit'"		v_y="0"/>
+			
+			<run_sequence filter="'filter_not_done'" name="'spawn_unit'"/>
+			<!-- <run_sequence filter="'filter_is_done'" name="'destroy_self'"/> -->
+		</sequence>
+		
+		<sequence editable_state="true" name="'destroy_self'" triggable="true">
+			<slot slot="0"/>
+		</sequence>
+	</unit>
+</table>

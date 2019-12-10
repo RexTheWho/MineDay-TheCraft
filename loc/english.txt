@@ -1,0 +1,6 @@
+{
+	"":"",
+	"":"",
+	"heist_digbuilder_name":"Not-Minecraft",
+	"heist_digbuilder_brief":"For legal reasons this is 100%* not minecraft.\n\n\n\n\n\n\n\n\n\n*Yes."
+}

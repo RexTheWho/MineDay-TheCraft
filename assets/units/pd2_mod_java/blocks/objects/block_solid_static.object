@@ -1,0 +1,22 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_java/blocks/objects/block_solid_static" orientation_object="rp_rootpoint" />
+	
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	
+	<graphics>
+		<graphic_group name="grp_faces" enabled="true" culling_object="co_culling">
+			<object name="g_x_neg"		enabled="true" />
+			<object name="g_x_pos"		enabled="true" />
+			<object name="g_y_neg"		enabled="true" />
+			<object name="g_y_pos"		enabled="true" />
+			<object name="g_z_neg"		enabled="true" />
+			<object name="g_z_pos"		enabled="true" />
+			<object name="c_c"			enabled="true" shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+	
+</dynamic_object>

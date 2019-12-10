@@ -1,0 +1,7 @@
+<materials version="3" group="melee_group">
+    <material name="mtl_items" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture		file="units/pd2_mod_java/items/items"/>
+		<material_texture		file="units/pd2_mod_java/items/gsma_flat_alt" />
+		<bump_normal_texture	file="units/pd2_mod_java/items/blank_normalmap" />
+    </material>
+</materials>

@@ -1,0 +1,37 @@
+<table>
+	<unit>
+		<variables>
+			<var_stage value="0"/>
+		</variables>
+		
+		<filter name="'broken'">
+			<check value="vars.var_stage == 9"/>
+		</filter>
+		
+		<body name="'body_static'">
+			<endurance damage="1" melee="1">
+				<run_sequence name=" 'break_block' "/>
+			</endurance>
+		</body>
+		
+		<sequence name="'spawned'" editable_state="true" startup="true" triggable="true">
+			<run_sequence name="'grow'" start_time="10"/>
+			<run_sequence name="'grow'" start_time="20"/>
+			<run_sequence name="'grow'" start_time="30"/>
+			<run_sequence name="'grow'" start_time="40"/>
+			<run_sequence name="'grow'" start_time="50"/>
+			<run_sequence name="'grow'" start_time="60"/>
+			<run_sequence name="'grow'" start_time="70"/>
+			<run_sequence name="'grow'" start_time="80"/>
+		</sequence>
+		<sequence name="'grow'" editable_state="true" triggable="true">
+			<function extension="'cube_unit'" function="'block_grow'"/>
+		</sequence>
+		
+		<sequence name="'break_block'" editable_state="true" triggable="true">
+			<body name="'body_static'"	enabled="false"/>
+			<function extension="'cube_unit'" function="'broke_block'"/>
+			<slot slot="0"/>
+		</sequence>
+	</unit>
+</table>

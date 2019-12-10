@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="rp_rootpoint" mode="add">
+        <parent root="true" />
+    </object3d>
+    <import file="item_pickaxe_iron.obj" type="obj" create_objects="true">
+        <rootpoint name="rp_rootpoint">
+            <default/>
+        </rootpoint>
+    </import>
+</modelscript>

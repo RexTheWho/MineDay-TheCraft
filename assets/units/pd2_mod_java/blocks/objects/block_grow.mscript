@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="rp_rootpoint" mode="add">
+        <parent root="true" />
+    </object3d>
+    <object3d name="a_block" mode="add">
+        <parent name="rp_rootpoint" />
+        <position x="0" y="0" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="a_block_centre" mode="add">
+        <parent name="a_block" />
+        <position x="50" y="50" z="50" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <import file="block_grow.obj" type="obj" create_objects="true">
+        <rootpoint name="rp_rootpoint">
+            <object name="a_block" />
+        </rootpoint>
+        <rootpoint name="a_block">
+            <default/>
+        </rootpoint>
+    </import>
+</modelscript>

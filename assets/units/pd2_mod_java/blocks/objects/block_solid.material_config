@@ -1,0 +1,37 @@
+<materials version="3">
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+	
+	<material name="mtl_effect_mul" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/cracks" />
+        <variable			name="intensity" type="scalar" value="sun"/>
+	</material>
+	<material name="mtl_effect_add" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/cracks" />
+        <variable			name="intensity" type="scalar" value="sun"/>
+	</material>
+	
+	<material name="mtl_x_neg" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+	<material name="mtl_x_pos" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+	<material name="mtl_y_neg" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+	<material name="mtl_y_pos" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+	<material name="mtl_z_neg" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+	<material name="mtl_z_pos" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE" unique="true" version="2">
+		<diffuse_texture	file="units/pd2_mod_java/blocks/textures/missing" />
+		<material_texture	file="units/pd2_mod_java/blocks/textures/gsma_flat" />
+	</material>
+</materials>

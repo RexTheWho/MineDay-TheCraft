@@ -1,0 +1,80 @@
+<table directory="assets">
+	<add unload_on_restart="true" >
+		<!--ENVIRONMENT-->
+		<scene				path="units/pd2_mod_java/environments/mc_sky_day/mc_sky_day" load="true"/>
+		<model				path="units/pd2_mod_java/environments/mc_sky_day/mc_sky_day"/>
+		<material_config	path="units/pd2_mod_java/environments/mc_sky_day/mc_sky_day"/>
+		<texture			path="units/pd2_mod_java/environments/mc_sky_day/mc_sky_day_df"/>
+		
+		<!--TEST-->
+		<unit				path="units/pd2_mod_java/dev/test_chunk_loader/test_chunk_loader"/>
+		<object				path="units/pd2_mod_java/dev/test_chunk_loader/test_chunk_loader"/>
+		<model				path="units/pd2_mod_java/dev/test_chunk_loader/test_chunk_loader"/>
+		<sequence_manager	path="units/pd2_mod_java/dev/test_chunk_loader/test_chunk_loader"/>
+		<unit				path="units/pd2_mod_java/dev/test_chunk_loader_v2/test_chunk_loader_v2"/>
+		<object				path="units/pd2_mod_java/dev/test_chunk_loader_v2/test_chunk_loader_v2"/>
+		<model				path="units/pd2_mod_java/dev/test_chunk_loader_v2/test_chunk_loader_v2"/>
+		
+		<!--BLOCK OBJECTS-->
+		<object				path="units/pd2_mod_java/blocks/objects/block_solid"/>
+		<model				path="units/pd2_mod_java/blocks/objects/block_solid"/>
+		<sequence_manager	path="units/pd2_mod_java/blocks/objects/block_solid"/>
+		<material_config	path="units/pd2_mod_java/blocks/objects/block_solid"/>
+		<object				path="units/pd2_mod_java/blocks/objects/block_solid_static"/>
+		<model				path="units/pd2_mod_java/blocks/objects/block_solid_static"/>
+		<material_config	path="units/pd2_mod_java/blocks/objects/block_solid_static"/>
+		<object				path="units/pd2_mod_java/blocks/objects/block_grow"/>
+		<model				path="units/pd2_mod_java/blocks/objects/block_grow"/>
+		<material_config	path="units/pd2_mod_java/blocks/objects/block_grow"/>
+		<sequence_manager	path="units/pd2_mod_java/blocks/objects/block_grow"/>
+		<object				path="units/pd2_mod_java/blocks/objects/block_crossed"/>
+		<model				path="units/pd2_mod_java/blocks/objects/block_crossed"/>
+		<material_config	path="units/pd2_mod_java/blocks/objects/block_crossed"/>
+		<sequence_manager	path="units/pd2_mod_java/blocks/objects/block_crossed"/>
+		
+		<!--BLOCK UNITS-->
+		<unit				path="units/pd2_mod_java/blocks/block_default"/>
+		<unit				path="units/pd2_mod_java/blocks/block_default_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_bedrock"/>
+		<unit				path="units/pd2_mod_java/blocks/block_bedrock_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_dirt"/>
+		<unit				path="units/pd2_mod_java/blocks/block_dirt_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_grass"/>
+		<unit				path="units/pd2_mod_java/blocks/block_grass_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_sand"/>
+		<unit				path="units/pd2_mod_java/blocks/block_sand_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_tnt"/>
+		<unit				path="units/pd2_mod_java/blocks/block_tnt_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_stone"/>
+		<unit				path="units/pd2_mod_java/blocks/block_stone_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_obsidian"/>
+		<unit				path="units/pd2_mod_java/blocks/block_obsidian_static"/>
+		<unit				path="units/pd2_mod_java/blocks/block_wheat"/>
+		<unit				path="units/pd2_mod_java/blocks/block_grass_plant"/>
+		
+		<!--TEXTURES-->
+		<texture			path="units/pd2_mod_java/blocks/textures/gsma_flat"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/nm_flat"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/missing"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/cracks"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/bedrock"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/sand"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/dirt"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/grass"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/grass_block_top"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/grass_block_side"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/tnt_top"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/tnt_bottom"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/tnt_side"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/stone"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/obsidian"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage0"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage1"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage2"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage3"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage4"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage5"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage6"/>
+		<texture			path="units/pd2_mod_java/blocks/textures/wheat_stage7"/>
+	</add>
+</table>
